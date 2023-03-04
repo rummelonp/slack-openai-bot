@@ -1,0 +1,8 @@
+export SLACK_SIGNING_SECRET=
+export SLACK_BOT_TOKEN=
+
+export OPENAI_API_KEY=
+
+export SYSTEM_PROMPT=
+export WAIT_MESSAGE=
+export ERROR_MESSAGE=

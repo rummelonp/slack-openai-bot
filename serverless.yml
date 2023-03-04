@@ -1,0 +1,27 @@
+service: slack-openai-bot
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: ap-northeast-1
+  runtime: nodejs18.x
+  timeout: 30
+  environment:
+    SLACK_SIGNING_SECRET: ${env:SLACK_SIGNING_SECRET}
+    SLACK_BOT_TOKEN: ${env:SLACK_BOT_TOKEN}
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    SYSTEM_PROMPT: ${env:SYSTEM_PROMPT,null}
+    WAIT_MESSAGE: ${env:WAIT_MESSAGE,null}
+    ERROR_MESSAGE: ${env:ERROR_MESSAGE,null}
+
+functions:
+  slack:
+    handler: src/app.handler
+    events:
+      - http:
+          path: slack/events
+          method: post
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
