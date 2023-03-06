@@ -14,7 +14,7 @@ For configuration management, we employed the Serverless Framework, and deploy t
 ## Installation
 1. Clone the repository:
 ```
-git clone git@github.com:mitukiii/slack-openai-bot.git
+git clone git@github.com:rummelonp/slack-openai-bot.git
 ```
    
 2. Install dependencies:
