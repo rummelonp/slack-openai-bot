@@ -25,6 +25,7 @@ ex) word\`code\`word -> word \`code\` word
 
 Let's begin.
 `
+
 const waitMessage = process.env.WAIT_MESSAGE ??
   'Please wait a little'
 
