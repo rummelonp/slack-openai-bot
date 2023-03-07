@@ -36,6 +36,11 @@ export function onMessage(
     if (!replies.messages || replies.messages.length === 0) {
       return
     }
+    // NOTE: 自分と関係ないスレッドを無視する
+    if (!replies.messages.some(message => message.bot_id == context.botId)) {
+      return
+    }
+    // NOTE: スレッドの最後のメッセージが自分の場合無視する
     if (replies.messages[replies.messages.length - 1].bot_id === context.botId) {
       return
     }
