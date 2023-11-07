@@ -12,7 +12,7 @@ export async function createChatCompletion(
   messages: Message[]
 ): Promise<string> {
   return openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4-1106-preview',
     messages
   }).then(response => {
     const text = response.choices[0].message?.content
