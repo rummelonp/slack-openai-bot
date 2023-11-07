@@ -1,26 +1,21 @@
-import {
-  OpenAIApi,
-  Configuration,
-  ChatCompletionRequestMessage
-} from 'openai'
+import { OpenAI } from 'openai'
+import { ChatCompletionMessageParam } from 'openai/resources'
 
 
-export type Message = ChatCompletionRequestMessage
+export type Message = ChatCompletionMessageParam
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY as string
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 })
-
-const openai = new OpenAIApi(configuration)
 
 export async function createChatCompletion(
   messages: Message[]
 ): Promise<string> {
-  return openai.createChatCompletion({
+  return openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
     messages
   }).then(response => {
-    const text = response.data.choices[0].message?.content
+    const text = response.choices[0].message?.content
     if (!text) throw new Error('Message is empty')
     return text
   }).catch(e => {

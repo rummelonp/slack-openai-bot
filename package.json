@@ -7,16 +7,16 @@
     "lint": "eslint 'src/*.ts'"
   },
   "dependencies": {
-    "@slack/bolt": "^3.12.2",
-    "openai": "^3.2.1"
+    "@slack/bolt": "^3.14.0",
+    "openai": "^4.16.1"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.111",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "eslint": "^8.35.0",
-    "serverless": "^3.28.1",
+    "@types/aws-lambda": "^8.10.126",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.53.0",
+    "serverless": "^3.36.0",
     "serverless-offline": "^12.0.4",
-    "serverless-plugin-typescript": "^2.1.4",
+    "serverless-plugin-typescript": "^2.1.5",
     "typescript": "^4.9.5"
   }
 }
